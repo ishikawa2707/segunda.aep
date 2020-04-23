@@ -1,3 +1,28 @@
 1. Explicar o conceito de encapsulamento (métodos e atributos), destacando seu propósito.
 
+O encapsulamento é uma das maiores vantagens de OO, podemos isolar o atributo da classe, podemos alterar o atributo da forma que quisermos dentro da classe, incluir tratamentos do dado dentro dos métodos, ou criar uma regra de negócio para manipulação daquele dado, ou até mesmo mudarmos o nome do atributo em questão sem intervir nas classes que usam os métodos getters e setters, e outra coisa importante, não devemos criar getter e setter pra todos os atributos devemos saber se ele realmente irá precisar, por exemplo, em um atributo talvez eu precise somente recuperar o valor dele, assim eu usaria somente o método get, e além do mais o controle sob seu código fica extremamente maior.
+
 2. Explicar como o uso do encapsulamento em conjunto com métodos modificadores (como os setters) podem promover o reuso de código.
+
+Os getters e setters permitem controlar como as variáveis importantes são acessadas e atualizadas no seu código. Por exemplo, considere este método setter
+
+public void setNumero(int numero) {
+  if (numero < 1 || numero > 5) {
+    throw new IllegalArgumentException();
+  }
+  this.numero = num;
+}
+
+Usando o setNumbermétodo, você pode ter certeza de que o valor de num sempre está entre 1 e 5. Isso é muito melhor do que atualizar a num variável diretamente:
+
+obj.numero = 13;
+
+Se você atualizar numero diretamente, é possível que você cause efeitos colaterais indesejados em outro lugar do seu código. Aqui, a configuração numero para 13 viola a restrição de 1 a 5 que queremos estabelecer.
+
+Criar numero uma variável privada e usar o setNumero o método impediria que isso acontecesse.
+
+Por outro lado, a única maneira de ler o valor de numero é usando um método getter:
+
+public int getNumber() {
+  return this.number;
+}
