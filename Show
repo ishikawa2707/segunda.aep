@@ -1,0 +1,38 @@
+package segunda.aep;
+
+public class Show {
+
+		
+			private String NomeArtista;
+			private int IdadePermitida;
+			private String LocalShow;
+			private int QuantidadeDeIngressoVendido;
+			private int CapacidadeTotalDePessoas;
+			
+			
+			public Show() {
+				System.out.println("Criando Show:");
+			}
+			
+			public void setNomeArtista(String NomeArtista) {
+			   this.NomeArtista = NomeArtista;
+			}
+			public void setIdadePermitida(int IdadePermitida){
+				this.IdadePermitida = IdadePermitida;
+			}
+			public void setLocal(String LocalShow){
+				this.LocalShow = LocalShow;
+			}
+			public void setQuantidadeDeIngressoVendido(int QuantidadeDeIngressoVendido) {
+				this.QuantidadeDeIngressoVendido = QuantidadeDeIngressoVendido;
+			}
+			
+		    public void setCapacidadeTotalDePessoas(int  CapacidadeTotalDePessoas) {
+		    	if(QuantidadeDeIngressoVendido > CapacidadeTotalDePessoas) {
+		    		throw new RuntimeException("Inválido, quantidade maxima de pessoas excedida.");
+		    	}
+		    	this.CapacidadeTotalDePessoas = CapacidadeTotalDePessoas;
+		    }
+
+  
+}
