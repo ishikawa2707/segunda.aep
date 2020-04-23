@@ -2,42 +2,46 @@ package segunda.aep;
 
 public class Show {
 
-	private String NomeArtista;
-	private int IdadePermitida;
-	private String LocalShow;
-	private int QuantidadeDeIngressoVendido;
-	private int CapacidadeTotalDePessoas;
+	private String nomeArtista;
+	private int idadePermitida;
+	private String localShow;
+	private int quantidadeDeIngressoVendido;
+	private int capacidadeTotalDePessoas;
 
 	public Show() {
 		System.out.println("Criando Show:");
 	}
 
-	public Show(String NomeArtista, int IdadePermitida, String LocalShow, int QuantidadeDeIngressoVendido,
-			int CapacidadeTotalDePessoas) {
-
+	public Show(String nomeArtista, int idadePermitida, String localShow, int quantidadeDeIngressoVendido,
+			int capacidadeTotalDePessoas) {
+		this.nomeArtista = nomeArtista;
+		this.idadePermitida = idadePermitida;
+		this.localShow = localShow;
+		this.quantidadeDeIngressoVendido = quantidadeDeIngressoVendido;
+		this.setCapacidadeTotalDePessoas(capacidadeTotalDePessoas);
 	}
 
-	public void setNomeArtista(String NomeArtista) {
-		this.NomeArtista = NomeArtista;
+	public void setNomeArtista(String nomeArtista) {
+		this.nomeArtista = nomeArtista;
 	}
 
-	public void setIdadePermitida(int IdadePermitida) {
-		this.IdadePermitida = IdadePermitida;
+	public void setIdadePermitida(int idadePermitida) {
+		this.idadePermitida = idadePermitida;
 	}
 
-	public void setLocal(String LocalShow) {
-		this.LocalShow = LocalShow;
+	public void setLocal(String localShow) {
+		this.localShow = localShow;
 	}
 
-	public void setQuantidadeDeIngressoVendido(int QuantidadeDeIngressoVendido) {
-		this.QuantidadeDeIngressoVendido = QuantidadeDeIngressoVendido;
+	public void setQuantidadeDeIngressoVendido(int quantidadeDeIngressoVendido) {
+		this.quantidadeDeIngressoVendido = quantidadeDeIngressoVendido;
 	}
 
-	public void setCapacidadeTotalDePessoas(int CapacidadeTotalDePessoas) {
-		if (QuantidadeDeIngressoVendido > CapacidadeTotalDePessoas) {
+	public void setCapacidadeTotalDePessoas(int capacidadeTotalDePessoas) {
+		if (quantidadeDeIngressoVendido > capacidadeTotalDePessoas) {
 			throw new RuntimeException("Inválido, quantidade maxima de pessoas excedida.");
 		}
-		this.CapacidadeTotalDePessoas = CapacidadeTotalDePessoas;
+		this.capacidadeTotalDePessoas = capacidadeTotalDePessoas;
 	}
 
 }
