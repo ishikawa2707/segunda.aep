@@ -1,0 +1,3 @@
+1. Explicar o conceito de encapsulamento (métodos e atributos), destacando seu propósito.
+
+2. Explicar como o uso do encapsulamento em conjunto com métodos modificadores (como os setters) podem promover o reuso de código.
