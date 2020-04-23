@@ -1,29 +1,21 @@
 package segunda.aep;
 
 public class AppShow {
-	
+
 	public static void main(String[] args) {
-		Show ButecoDoGusttavoLima = new Show();
-		
-		ButecoDoGusttavoLima.setNomeArtista("Gusttavo Lima ");
-		ButecoDoGusttavoLima.setIdadePermitida(18);
-		ButecoDoGusttavoLima.setLocal("Bar Do Zé");
-		ButecoDoGusttavoLima.setQuantidadeDeIngressoVendido(80);
-		ButecoDoGusttavoLima.setCapacidadeTotalDePessoas(80);
-	 
 		try {
-			ButecoDoGusttavoLima.setNomeArtista("Gusttavo Lima ");
-			ButecoDoGusttavoLima.setIdadePermitida(18);
-			ButecoDoGusttavoLima.setLocal("Bar Do Zé");
-			ButecoDoGusttavoLima.setQuantidadeDeIngressoVendido(90);
-			//Nesse caso a quantidade de ingresso vendido foi maior que a capacidade
-			//irá dar o erro!.
-			ButecoDoGusttavoLima.setCapacidadeTotalDePessoas(80);
-		 
-		} catch (Exception e) {
-			System.out.println("Mensagem de exceção: Quantidade de ingresso vendido acima da capacidade total. ");
+			Show ButecoDoGusttavoLima = new Show("Gusttavo Lima ", 18, "Bar do Zé", 70, 80);
+
+			Show JorgeeMateus = new Show("Jorge ", 18, "Bar do Zé", 90, 80);
+
+			System.out.println(ButecoDoGusttavoLima);
+
+			System.out.println(JorgeeMateus);
+
+		} catch (RuntimeException e) {
+			System.out.println("Mensagem de exceção: " + e.getMessage());
 		}
-		System.out.println(ButecoDoGusttavoLima);
+
 	}
 
 }
